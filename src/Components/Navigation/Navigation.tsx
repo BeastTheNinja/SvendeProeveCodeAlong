@@ -1,10 +1,15 @@
 import { NavLink } from "react-router";
+import LogoImage from "../../assets/Logo.svg"
 
 
 export const Navigation = () => {
 
     return (
         <nav>
+            <figure>
+                <img src={LogoImage} alt="Micasa Logo" />
+            </figure>
+
             <ul>
                 <li>
                     <NavLink to="/">Home</NavLink>
@@ -24,7 +29,8 @@ export const Navigation = () => {
                 <li>
                     <search>
                         <label htmlFor="search" className="search">
-                            <input type="text" placeholder="Søg..." />
+                            <input type="text" />
+                            <button type="submit">Søg</button>
                         </label>
                     </search>
 
