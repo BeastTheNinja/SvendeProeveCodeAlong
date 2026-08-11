@@ -6,7 +6,7 @@ import { ContactPage } from './pages/ContactPage'
 import { Dashboard } from './pages/Dashboard'
 import { LoginPage } from './pages/LoginPage'
 import { SearchResult } from './pages/SearchResultPage'
-import { MainLayout } from './Components/layouts/MainLayout'
+import { MainLayout } from './layouts/MainLayout'
 
 
 function App() {

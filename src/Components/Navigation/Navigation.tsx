@@ -1,11 +1,12 @@
 import { NavLink } from "react-router";
 import LogoImage from "../../assets/Logo.svg"
+import styles from "./Navigation.module.scss"
 
 
 export const Navigation = () => {
 
     return (
-        <nav>
+        <nav className={styles.navStyle}>
             <figure>
                 <img src={LogoImage} alt="Micasa Logo" />
             </figure>

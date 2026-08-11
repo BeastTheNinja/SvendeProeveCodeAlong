@@ -1,7 +1,9 @@
+import { Slider } from "../Components/Slider/SliderImages"
+
 export const HomePage = () => {
     return (
         <div >
-            <h1>Forside</h1>
+            <Slider />
         </div>
     )
 }
