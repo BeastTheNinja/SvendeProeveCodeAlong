@@ -1,15 +1,16 @@
-.estateCard{
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-    max-width: 400px;
-    box-shadow: 4px 4px 12px 4px rgba(20, 20, 20, 0.05);
-    border: solid 1px rgba(30, 30,30, 0.2);
-    border-radius: 8px;
-    gap: 4px;
-    img{
-        width: 100%;
-        object-fit: cover;
-    }
+.estateCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 8px;
+  max-width: 400px;
+  box-shadow: 4px 4px 12px 4px rgba(20, 20, 20, 0.05);
+  border: solid 1px rgba(30, 30, 30, 0.2);
+  border-radius: 8px;
+  gap: 4px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 
 }

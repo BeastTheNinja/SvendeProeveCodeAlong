@@ -36,6 +36,7 @@ export const EstateCards = ({ EstateData }: EstateCardsProps) => {
                     <p>{EstateData.price} kr.</p>
                 </figcaption>
             </figure>
+
         </div>
     )
 }

@@ -1,7 +1,20 @@
 import style from './Testimonies.module.scss'
+import type { ReviewDataTypes } from '../../types/reviewData'
+
+interface TestimoniesProps {
+    reviewData: ReviewDataTypes[]
+}
+
+export const Testimonies = ({ reviewData }: TestimoniesProps) => {
 
 
-export const Testimonies = () => {
+
+    useEffect(() => {
+
+
+    }, [])
+
+
     return (
         <article className={style.testimonies}>
             <h2>Det siger vores kunder</h2>

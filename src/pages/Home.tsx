@@ -6,26 +6,32 @@ import { useFetch } from "../hooks/useFetch"
 import type { DataEstate } from "../types/dataTypes"
 
 export const HomePage = () => {
-    const { data } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/estates")
+
+
+
+    const { data: estateData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/estates")
+
+    const { data: reviewData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/reviews")
+
+    console.log(reviewData)
 
     const getRandomEstates = (estates: DataEstate[]) => {
         const shuffled = [...estates].sort(() => Math.random() - 0.5)
         return shuffled.slice(0, 3)
     }
 
-    console.log(data)
     return (
         <>
             <Slider />
             <FlexContainer gap={8} dir={"row"} position={"absolute"} xPosition={"10vh"} yPosition={"45vh"}>
 
-                {data && getRandomEstates(data).map((estate: DataEstate) => {
+                {estateData && getRandomEstates(estateData).map((estate: DataEstate) => {
                     return (
                         <EstateCards EstateData={estate} key={estate.id} />
                     )
                 })}
             </FlexContainer>
-            <Testimonies />
+            <Testimonies reviewData={reviewData} />
         </>
     )
 }
