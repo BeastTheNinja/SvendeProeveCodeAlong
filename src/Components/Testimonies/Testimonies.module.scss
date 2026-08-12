@@ -1,0 +1,36 @@
+@use "../../GlobalStyle.module.scss" as globals;
+
+.testimonies {
+  margin-top: 40vh;
+  h2 {
+    text-align: center;
+    padding: 4px;
+  }
+  section {
+    background-color: globals.$lavenderBlush;
+    padding: 4px;
+  }
+  span {
+    display: block;
+    background-color: globals.$rosaQuarts;
+    width: 100%;
+    padding: 4px;
+    margin: auto;
+    text-align: center;
+    button {
+      background-color: transparent;
+      color: globals.$lavenderBlush;
+      border: none;
+      border-left: 1px solid globals.$lavenderBlush;
+      border-right: 1px solid globals.$lavenderBlush;
+      width: 240px;
+      height: 46px;
+      font-weight: bold;
+      &:hover {
+        background-color: globals.$raisinBlack;
+        color: globals.$paynesGray;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import { EstateCards } from "../Components/Cards/EstateCards"
+import { FlexContainer } from "../Components/FlexContainer/FlexContainer"
 import { Slider } from "../Components/Slider/SliderImages"
+import { Testimonies } from "../Components/Testimonies/Testimonies"
 import { useFetch } from "../hooks/useFetch"
 import type { DataEstate } from "../types/dataTypes"
 
@@ -13,13 +15,17 @@ export const HomePage = () => {
 
     console.log(data)
     return (
-        <div >
+        <>
             <Slider />
-            {data && getRandomEstates(data).map((estate: DataEstate) => {
-                return (
-                    <EstateCards EstateData={estate} key={estate.id} />
-                )
-            })}
-        </div>
+            <FlexContainer gap={8} dir={"row"} position={"absolute"} xPosition={"10vh"} yPosition={"45vh"}>
+
+                {data && getRandomEstates(data).map((estate: DataEstate) => {
+                    return (
+                        <EstateCards EstateData={estate} key={estate.id} />
+                    )
+                })}
+            </FlexContainer>
+            <Testimonies />
+        </>
     )
 }
