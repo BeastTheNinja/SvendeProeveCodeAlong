@@ -32,6 +32,7 @@ export const EstateCards = ({ EstateData }: EstateCardsProps) => {
                 <figcaption>
                     <h5>{EstateData.address}</h5>
                     <p>{EstateData.city.name}</p>
+                    <p>{EstateData.energyLabel.name}</p>
                     <p>{EstateData.numRooms} værelser</p>
                     <p>{EstateData.price} kr.</p>
                 </figcaption>

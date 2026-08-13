@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-export const useFetch = (url: string) => {
-    const [data, setData] = useState(null);
+export function useFetch<T>(url: string) {
+    const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
@@ -11,17 +11,18 @@ export const useFetch = (url: string) => {
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
-                    throw new Error("Network response was not ok" + response.status);
+                    throw new Error("Network response was not ok " + response.status);
                 }
-                const data = await response.json();
+
+                const data: T = await response.json();
                 setData(data);
             } catch (error) {
                 setError(error instanceof Error ? error : new Error(String(error)));
             } finally {
                 setLoading(false);
             }
+        };
 
-        }
         fetchData();
     }, [url]);
 

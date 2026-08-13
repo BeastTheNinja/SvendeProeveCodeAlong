@@ -5,13 +5,21 @@ import { StaffSection } from "../Components/Staff/StaffSection"
 import { Testimonies } from "../Components/Testimonies/Testimonies"
 import { useFetch } from "../hooks/useFetch"
 import type { DataEstate } from "../types/dataTypes"
+import type { ReviewDataTypes } from "../types/reviewData"
+import type { StaffDataTypes } from "../types/StaffData"
 
 export const HomePage = () => {
-    const { data: estateData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/estates")
+    const { data: estateData } = useFetch<DataEstate[]>(
+        import.meta.env.VITE_PUBLIC_BASE_URL + "/api/estates"
+    )
 
-    const { data: reviewData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/reviews")
+    const { data: reviewData } = useFetch<ReviewDataTypes[]>(
+        import.meta.env.VITE_PUBLIC_BASE_URL + "/api/reviews"
+    )
 
-    const { data: staffData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/staff")
+    const { data: staffData } = useFetch<StaffDataTypes[]>(
+        import.meta.env.VITE_PUBLIC_BASE_URL + "/api/staff"
+    )
 
     const getRandomEstates = (estates: DataEstate[]) => {
         const shuffled = [...estates].sort(() => Math.random() - 0.5)

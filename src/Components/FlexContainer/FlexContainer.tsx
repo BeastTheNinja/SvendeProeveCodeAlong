@@ -2,13 +2,13 @@ import style from "./FlexContainer.module.scss"
 
 interface FlexContainerProps {
     children: React.ReactNode
-    gap: React.CSSProperties["gap"]
-    dir: React.CSSProperties["flexDirection"]
+    gap?: React.CSSProperties["gap"]
+    dir?: React.CSSProperties["flexDirection"]
     align?: React.CSSProperties["alignItems"]
     justify?: React.CSSProperties["justifyContent"]
-    position: React.CSSProperties["position"]
-    xPosition: React.CSSProperties["left"]
-    yPosition: React.CSSProperties["top"]
+    position?: React.CSSProperties["position"]
+    xPosition?: React.CSSProperties["left"]
+    yPosition?: React.CSSProperties["top"]
 }
 
 
