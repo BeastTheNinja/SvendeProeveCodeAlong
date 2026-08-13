@@ -1,0 +1,19 @@
+@use "../../GlobalStyle.module.scss" as globals;
+
+.footerStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: globals.$raisinBlack;
+  gap: 8px;
+  margin-top: auto;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    color: globals.$lavenderBlush;
+    a {
+      color: globals.$lavenderBlush;
+      text-decoration: none;
+    }
+  }
+}

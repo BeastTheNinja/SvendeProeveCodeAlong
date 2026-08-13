@@ -1,0 +1,84 @@
+.staffSectionStyle {
+  max-width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 5rem;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+  }
+
+  .staffGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.staffSectionStyle {
+  figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background: #000;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99;
+      background: rgba(10, 16, 28, 0.8);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 0.5rem 1rem;
+      gap: 1rem;
+      transition:
+        height 0.35s ease,
+        background 0.3s ease;
+    }
+
+    &:hover figcaption {
+      background: rgba(10, 16, 28, 0.9);
+      justify-content: flex-start;
+    }
+  }
+}
+
+.contactInfo {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.staffSectionStyle figure:hover .contactInfo {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -16,7 +16,7 @@ export const Testimonies = ({ reviewData }: TestimoniesProps) => {
             setReviewIndex((currentIndex) =>
                 currentIndex >= reviewData.length - 1 ? 0 : currentIndex + 1
             )
-        }, 300000) // 5 minutes in milliseconds
+        }, 3000) // 5 minutes in milliseconds
 
         return () => clearInterval(interval)
     }, [reviewData.length])

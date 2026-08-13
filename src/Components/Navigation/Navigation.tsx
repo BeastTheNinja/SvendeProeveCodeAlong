@@ -13,16 +13,13 @@ export const Navigation = () => {
 
             <ul>
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/">Forside</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/estate">Estate</NavLink>
+                    <NavLink to="/estate">Boliger</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact">Contact</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/dashboard">Dashboard</NavLink>
+                    <NavLink to="/contact">Kontakt</NavLink>
                 </li>
                 <li>
                     <NavLink to="/login">Login</NavLink>

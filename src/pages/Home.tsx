@@ -1,25 +1,24 @@
 import { EstateCards } from "../Components/Cards/EstateCards"
 import { FlexContainer } from "../Components/FlexContainer/FlexContainer"
 import { Slider } from "../Components/Slider/SliderImages"
+import { StaffSection } from "../Components/Staff/StaffSection"
 import { Testimonies } from "../Components/Testimonies/Testimonies"
 import { useFetch } from "../hooks/useFetch"
 import type { DataEstate } from "../types/dataTypes"
 
 export const HomePage = () => {
-
-
-
     const { data: estateData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/estates")
 
     const { data: reviewData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/reviews")
 
-    console.log(reviewData)
+    const { data: staffData } = useFetch(import.meta.env.VITE_PUBLIC_BASE_URL + "/api/staff")
 
     const getRandomEstates = (estates: DataEstate[]) => {
         const shuffled = [...estates].sort(() => Math.random() - 0.5)
         return shuffled.slice(0, 3)
     }
 
+    console.log("Staff data:", staffData)
     return (
         <>
             <Slider />
@@ -31,7 +30,9 @@ export const HomePage = () => {
                     )
                 })}
             </FlexContainer>
-            <Testimonies reviewData={reviewData ?? []} />
+
+            {reviewData && <Testimonies reviewData={reviewData ?? []} />}
+            {staffData && <StaffSection staffData={staffData ?? []} />}
         </>
     )
 }
