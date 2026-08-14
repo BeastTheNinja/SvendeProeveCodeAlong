@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router"
 import type { DataEstate, EstateImage } from "../../types/dataTypes"
 import styles from "./EstateCards.module.scss"
+
 
 type EstateCardsProps = {
     EstateData: DataEstate
 }
 
+
 export const EstateCards = ({ EstateData }: EstateCardsProps) => {
+    const navigate = useNavigate()
+
+    
     const getVillaImage = (imageArray: EstateImage[]) => {
         const hasVillaLabel = imageArray.find((item: EstateImage) =>
             item.image.description.toLowerCase().includes("villa")
@@ -26,13 +32,15 @@ export const EstateCards = ({ EstateData }: EstateCardsProps) => {
     const imageSrc = getVillaImage(EstateData.estateImages)
 
     return (
-        <div className={styles.estateCard}>
+
+        <div className={styles.estateCard} onClick={() => navigate(`/estate/${EstateData.id}`)}>
             <figure>
                 <img src={imageSrc} alt={`${EstateData.address}`} />
                 <figcaption>
                     <h5>{EstateData.address}</h5>
                     <p>{EstateData.city.name}</p>
                     <p>{EstateData.energyLabel.name}</p>
+                    <p>{EstateData.floorSpace} m²</p>
                     <p>{EstateData.numRooms} værelser</p>
                     <p>{EstateData.price} kr.</p>
                 </figcaption>

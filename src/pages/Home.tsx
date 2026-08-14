@@ -26,7 +26,6 @@ export const HomePage = () => {
         return shuffled.slice(0, 3)
     }
 
-    console.log("Staff data:", staffData)
     return (
         <>
             <Slider />
